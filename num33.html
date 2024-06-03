@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 33</title>
+</head>
+
+<body>
+    <label for="firstNumber">First Number: </label>
+    <input type="number" name="first-number" id="firstNumber"><br><br>
+    <label for="secondNumber">Second Number: </label>
+    <input type="number" name="second-number" id="secondNumber"><br><br>
+
+    <button type="button" onclick="getResult()">Submit</button><br><br>
+
+    <span id="target"></span>
+
+
+    <script>
+        function getResult() {
+            let num1 = parseFloat(document.getElementById('firstNumber').value);
+            let num2 = parseFloat(document.getElementById('secondNumber').value);
+            let target = document.getElementById('target');
+
+            if ((num1 > 40 && num1 < 60) && (num2 > 70 && num2 < 100)) {
+                target.innerHTML = true;
+            } else {
+                target.innerHTML = false;
+            }
+        }
+    </script>
+</body>
+
+</html>
