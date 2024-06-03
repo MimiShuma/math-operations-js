@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 38</title>
+</head>
+
+<body>
+    <label for="totalMarks">Total marks: </label>
+    <input type="number" name="total-marks" id="totalMarks"><br><br>
+    <label for="examStatus">Exam Staus: </label>
+    <input type="text" name="exam-status" id="examStatus"><br><br>
+
+    <button type="button" onclick="getResultStatus()">Submit</button><br><br>
+
+    <span id="target"></span>
+
+
+    <script>
+        function getResultStatus() {
+            let totalMarks = parseFloat(document.getElementById('totalMarks').value);
+            let examStatus = document.getElementById('examStatus').value;
+            let target = document.getElementById('target');
+
+            if (examStatus) {
+                target.innerHTML = totalMarks >= 90 && totalMarks <= 100 ? true : false;
+            } else {
+                target.innerHTML = totalMarks >= 89 && totalMarks <= 100 ? true : false;
+            }
+
+        }
+    </script>
+</body>
+
+</html>
