@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 32</title>
+</head>
+
+<body>
+    <label for="firstNumber">First Number: </label>
+    <input type="number" name="first-number" id="firstNumber"><br><br>
+    <label for="secondNumber">Second Number: </label>
+    <input type="number" name="second-number" id="secondNumber"><br><br>
+
+    <button type="button" onclick="getBiggerInteger()">Submit</button><br><br>
+
+    <span id="target"></span>
+
+
+    <script>
+        function getBiggerInteger() {
+            let num1 = parseFloat(document.getElementById('firstNumber').value);
+            let num2 = parseFloat(document.getElementById('secondNumber').value);
+            let target = document.getElementById('target');
+
+            if (num1 > 100 || num2 > 100) {
+                target.innerHTML = "Input is greater than 100."
+            } else {
+                let subOfNum1and100 = 100 - num1;
+                let subOfNum2and100 = 100 - num2;
+                if (subOfNum1and100 > subOfNum2and100) {
+                    target.innerHTML = "Second number is the closest to 100."
+                } else {
+                    target.innerHTML = "First number is the closest to 100."
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
