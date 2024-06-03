@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 36</title>
+</head>
+
+<body>
+    <label for="firstNumber">First Number: </label>
+    <input type="number" name="first-number" id="firstNumber"><br><br>
+    <label for="secondNumber">Second Number: </label>
+    <input type="number" name="second-number" id="secondNumber"><br><br>
+    <label for="thirdNumber">Third Number: </label>
+    <input type="number" name="third-number" id="thirdNumber"><br><br>
+
+    <button type="button" onclick="getResult()">Submit</button><br><br>
+
+    <span id="target"></span>
+
+
+    <script>
+        function getResult() {
+            let num1 = (parseFloat(document.getElementById('firstNumber').value)) % 10;
+            let num2 = (parseFloat(document.getElementById('secondNumber').value)) % 10;
+            let num3 = (parseFloat(document.getElementById('thirdNumber').value)) % 10;
+            let target = document.getElementById('target');
+
+            if (num1 === num2 && num1 === num3) {
+                target.innerHTML = true;
+            } else {
+                target.innerHTML = false;
+            }
+        }
+    </script>
+</body>
+
+</html>
