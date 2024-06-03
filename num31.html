@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 31</title>
+</head>
+
+<body>
+    <label for="firstNumber">First Number: </label>
+    <input type="number" name="first-number" id="firstNumber"><br><br>
+    <label for="secondNumber">First Number: </label>
+    <input type="number" name="second-number" id="secondNumber"><br><br>
+    <label for="thirdNumber">First Number: </label>
+    <input type="number" name="third-number" id="thirdNumber"><br><br>
+
+    <button type="button" onclick="getBiggerInteger()">Submit</button><br><br>
+
+    <span id="target"></span>
+
+
+    <script>
+        function getBiggerInteger() {
+            let num1 = parseFloat(document.getElementById('firstNumber').value);
+            let num2 = parseFloat(document.getElementById('secondNumber').value);
+            let num3 = parseFloat(document.getElementById('thirdNumber').value);
+            let target = document.getElementById('target');
+
+            if (num1 > num2 && num1 > num3) {
+                target.innerHTML = "First number is the largest."
+            } else if (num2 > num1 && num2 > num3) {
+                target.innerHTML = "Second number is the largest."
+            } else if (num1 === num2 && num1 > num3) {
+                target.innerHTML = "First and Second number are equal and the largest."
+            } else if (num2 === num3 && num2 > num1) {
+                target.innerHTML = "Second and Third number are equal and the largest."
+            } else if (num1 === num3 && num1 > num2) {
+                target.innerHTML = "First and Third number are equal and the largest."
+            } else {
+                target.innerHTML = "Third number is the largest."
+            }
+        }
+    </script>
+</body>
+
+</html>
